@@ -1,0 +1,18 @@
+{
+  "name": "tablecreation",
+  "version": "1.0.0",
+  "description": "table",
+  "main": "controller.js",
+  "scripts": {
+    "start": "node controller.js",
+    "Student": "node controller.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-modules": "^0.0.1",
+    "pg": "^8.11.5"
+  }
+}
