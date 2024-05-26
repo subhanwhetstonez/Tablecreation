@@ -18,7 +18,7 @@ async function inputUser(req, res) {
     email,
     total_marks
   );
-  res.json("INSERTED DATA" + a.rows);
+  res.json({ "INSERTED DATA", a.rows });
 }
 
 async function userDisplay(req, res) {
@@ -32,12 +32,14 @@ async function userDisplay(req, res) {
 }
 
 async function oneUser(req, res) {
+  req.params.stdid;
   console.log("HERE");
-  const c = await functions.specificStd();
+  const c = await functions.specificStd(req.params.stdid);
   res.json(c.rows);
 }
 
 async function updateUser(req, res) {
+  req.params.stdid;
   let {
     first_name: first_name,
     last_name: last_name,
@@ -46,6 +48,7 @@ async function updateUser(req, res) {
     total_marks: total_marks,
   } = req.body;
   const d = await functions.updateStd(
+    req.params.stdid,
     first_name,
     last_name,
     phone_no,
@@ -56,7 +59,8 @@ async function updateUser(req, res) {
 }
 
 async function deleteUser(req, res) {
-  await functions.deleteStd();
+  req.params.stdid;
+  await functions.deleteStd(req.params.stdid);
   res.send("Student Info has been deleted");
 }
 
