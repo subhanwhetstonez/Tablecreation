@@ -1,16 +1,19 @@
-let express = require("express");
-let Router = express.Router();
-let service = require("./service.js");
+const express = require("express");
+const Router = express.Router();
+const service = require("./controller.js");
 
 Router.use(function (req, res, next) {
   console.log(req.url, "@", Date.now());
   next();
 });
 
-Router.route("/create").get(service.createTable);
+Router.route("/create").get(service.certain);
 
-Router.route("/").get(service.stdDisplay).post(service.inputData);
+Router.route("/").get(service.userDisplay).post(service.inputUser);
 
-//Router.route("/:id").get().post().delete();
+Router.route("/:stdid")
+  .get(service.oneUser)
+  .post(service.updateUser)
+  .delete(service.deleteUser);
 
 module.exports = Router;

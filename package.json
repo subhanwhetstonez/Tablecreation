@@ -2,10 +2,10 @@
   "name": "tablecreation",
   "version": "1.0.0",
   "description": "table",
-  "main": "controller.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node controller.js",
-    "Student": "node controller.js"
+    "person": "node app.js",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
