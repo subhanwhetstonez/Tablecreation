@@ -18,7 +18,7 @@ async function inputUser(req, res) {
     email,
     total_marks
   );
-  res.json({ "INSERTED DATA", a.rows });
+  res.json("INSERTED DATA");
 }
 
 async function userDisplay(req, res) {
@@ -65,8 +65,8 @@ async function deleteUser(req, res) {
 }
 
 async function certain(res, res) {
-  const f = await functions.createTable();
-  res.json(f.rows);
+  const f = await table.createTable();
+  res.json(f);
 }
 
 module.exports = {
