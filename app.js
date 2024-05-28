@@ -9,6 +9,7 @@ app.use("/student", studentRoute);
 
 app.use("/", (req, res) => {
   res.render(`pages/index`);
+  res.render("student-list", { title: "student List", studentData: data });
 });
 
 app.listen(3002, () => [console.log(" The server started on PORT = 3002")]);
